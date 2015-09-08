@@ -65,8 +65,9 @@ public class MainActivity extends AppCompatActivity {
 				Log.v("tinglog", motionEvent.getX() * 100 / view.getWidth() + " " + motionEvent.getY() * 100 / view.getHeight());
 				centerX = (int) (motionEvent.getX() * 100 / view.getWidth());
 				centerY = (int) (motionEvent.getY() * 100 / view.getHeight());
-				if(type==R.id.button_radial)
-					_stackBlurManager.processRadial(_seekBar.getProgress()+1,centerX,centerY);
+				if(type==R.id.button_radial){
+					onBlur(_seekBar.getProgress()+1);
+				}
 				return false;
 			}
 		});
